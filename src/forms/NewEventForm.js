@@ -1,32 +1,36 @@
 import React from 'react'
 import {Button, Form} from 'semantic-ui-react'
+import TimePicker from '../FormComponent/TimePickerDropDown'
+
 
 class NewEventForm extends React.Component {
   state = {
       name: "",
       description: "",
-      startTime: "",
-      endTime: "",
+      startDate: '' ,
+      startTime:'12:00',
+      endTime: "12:00",
+      endDate: "",
       timeZone: "America/New_York",
       currencyEventbrite:"",
   }
 
   handleChange = (e) => {
+    debugger;
     this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
     let newEvent = this.state
-
   }
 
   render() {
     return (
       <div>
-        <Form onSubmit={this.handleSubmit} class="form">
+        <Form onSubmit={this.handleSubmit} className="form">
           <Form.Field>
-            <label class="form-label">Name</label>
+            <label className="form-label">Name</label>
             <input
               name="name"
               placeholder="Name"
@@ -35,7 +39,7 @@ class NewEventForm extends React.Component {
             />
           </Form.Field>
           <Form.Field>
-            <label class="form-label">Description</label>
+            <label className="form-label">Description</label>
             <input
               placeholder="Description"
               name="description"
@@ -43,32 +47,38 @@ class NewEventForm extends React.Component {
               onChange={this.handleChange}
             />
           </Form.Field>
-          <div class="form-flex">
-            <Form.Field class="date-inputs">
-              <label class="form-label">Start Time</label>
+          <div className="form-flex">
+            <Form.Field>
+              <label className="form-label">Start Time</label>
               <input
-                id="datetime"
-                type="datetime-local"
+                type="date"
                 placeholder="Date"
                 name="startDate"
+                value={this.state.startDate}
+                onChange={this.handleChange}
+              />
+              <input id="time" type="time"
                 value={this.state.startTime}
                 onChange={this.handleChange}
+                name="startTime[time]"
               />
             </Form.Field>
+
+
             <Form.Field>
-              <label class="form-label">End Time</label>
+              <label className="form-label">End Time</label>
               <input
-                id="datetime"
-                type="datetime-local"
+                type="date"
                 placeholder="Date"
                 name="endDate"
-                value={this.state.end_date}
+                value={this.state.endTime}
                 onChange={this.handleChange}
               />
+              <input id="time" type="time" name="" value={this.state.endTime}/>
             </Form.Field>
           </div>
           <Form.Field>
-            <label class="form-label">Location</label>
+            <label className="form-label">Location</label>
             <input
               placeholder="Location"
               name="location"
