@@ -1,22 +1,19 @@
 import React from 'react'
 import {Button, Form} from 'semantic-ui-react'
-import TimePicker from '../FormComponent/TimePickerDropDown'
-
 
 class NewEventForm extends React.Component {
   state = {
       name: "",
       description: "",
-      startDate: '' ,
-      startTime:'12:00',
-      endTime: "12:00",
+      startDate: "" ,
+      startTime: '12:00',
+      endTime: "12:30",
       endDate: "",
       timeZone: "America/New_York",
       currencyEventbrite:"",
   }
 
   handleChange = (e) => {
-    debugger;
     this.setState({ [e.target.name]: e.target.value });
   }
 
@@ -26,6 +23,7 @@ class NewEventForm extends React.Component {
   }
 
   render() {
+    console.log(this.state.startDate)
     return (
       <div>
         <Form onSubmit={this.handleSubmit} className="form">
@@ -60,7 +58,7 @@ class NewEventForm extends React.Component {
               <input id="time" type="time"
                 value={this.state.startTime}
                 onChange={this.handleChange}
-                name="startTime[time]"
+                name="startTime"
               />
             </Form.Field>
 
@@ -71,10 +69,13 @@ class NewEventForm extends React.Component {
                 type="date"
                 placeholder="Date"
                 name="endDate"
+                value={this.state.endDate}
+                onChange={this.handleChange}
+              />
+              <input id="time" type="time" name="endTime"
                 value={this.state.endTime}
                 onChange={this.handleChange}
               />
-              <input id="time" type="time" name="" value={this.state.endTime}/>
             </Form.Field>
           </div>
           <Form.Field>
