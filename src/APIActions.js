@@ -14,3 +14,7 @@ export const createEvent = (data) => {
       body: JSON.stringify(data)
     })
 }
+
+export const getEvents = (data) => {
+    return fetch(`${API_URL}events`)
+}

@@ -30,7 +30,6 @@ class NewEventForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <Form onSubmit={this.handleSubmit} className="form">
@@ -55,8 +54,8 @@ class NewEventForm extends React.Component {
           <Form.Field>
             <label className="form-label">Address</label>
             <input
-              placeholder="Location"
-              name="location"
+              placeholder="Address"
+              name="address"
               value={this.state.address}
               onChange={this.handleChange}
             />
