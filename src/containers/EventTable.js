@@ -16,6 +16,7 @@ const EventTable = ({events}) => {
         <Table.HeaderCell>Event Price</Table.HeaderCell>
         <Table.HeaderCell>Start Time</Table.HeaderCell>
         <Table.HeaderCell>End Time</Table.HeaderCell>
+        <Table.HeaderCell>Eventbrite URL</Table.HeaderCell>
       </Table.Row>
     </Table.Header>
 
