@@ -22,7 +22,6 @@ class NewEventForm extends React.Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
     let event = this.state;
     event.start_date = `${event.startDate} ${event.startTime}`
     event.end_date = `${event.endDate} ${event.endTime}`
