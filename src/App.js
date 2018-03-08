@@ -11,7 +11,10 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch(`http://localhost:3000/events`).then(res => res.json()).then(events => {
+    const URL = "https://pulsd-take-home-backend.herokuapp.com/events"
+    // const URL = "http://localhost:3000/events"
+
+    fetch(URL).then(res => res.json()).then(events => {
       this.setState({events: events})
     })
   }

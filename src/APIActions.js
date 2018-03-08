@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
-const API_URL = "http://localhost:3000/"
+const API_URL = "https://pulsd-take-home-backend.herokuapp.com/"
+// const API_URL = "http://localhost:3000/"
 
 const headers = {
     'Content-Type': 'application/json',
