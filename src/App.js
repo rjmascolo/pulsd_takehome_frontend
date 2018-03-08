@@ -4,6 +4,11 @@ import './App.css';
 import NewEventForm from './forms/NewEventForm'
 
 class App extends Component {
+  
+  state = {
+    events: []
+  }
+
   render() {
     return (
       <div className="App">
